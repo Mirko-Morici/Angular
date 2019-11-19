@@ -1,0 +1,28 @@
+<h2>Products</h2>
+<div *ngFor="let prodotto of products"><!--products è una costante esportata da products.ts-->
+ <h3>
+      <a [title]=" prodotto.name + ' dettagli '">
+        <!--Itera i prodotti presenti in products-->
+      {{ prodotto.name }}
+      </a>
+  </h3>
+
+  <p *ngIf="prodotto.description">
+    <!--se il prodotto ha una descrizione la fa visualizzare-->
+      Descrizione: {{prodotto.description}}
+  </p>
+  <!--name e description sono dei campi della struttura esportata da products.ts-->
+
+  <button (click)="share()">
+    <!--la funzoine share è definita nel file product-lisst.components.ts Posso usarla perché ho fatto export della class in cui vi era questa funzione-->
+    
+    <!--le paarentesi attorno l'evento click effettuano il binding della funzione con l'evento-->
+      Condividi
+  </button>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
